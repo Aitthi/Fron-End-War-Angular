@@ -3,7 +3,7 @@
 Code from DIW[BN]
 
 ```
-git clone git@github.com:Aitthi/Fron-End-War-Angular.git
+git clone git@github.com:Aitthi/Front-End-War-Angular.git
 cd Fron-End-War-Angular
 npm install
 ng serve
