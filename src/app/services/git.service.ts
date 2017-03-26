@@ -7,12 +7,12 @@ export class GitService {
 
   constructor(private _http:Http) { }
 
-  getData(Repo){
+  getRepo(Repo){
     let url = "https://api.github.com/repos/"+Repo
     return this._http.get(url).map(res => res.json())
   }
 
-  getDataUser(Repo){
+  getStargazers(Repo){
     if(Repo == "angular"){
       Repo = "angular/angular"
     }else if(Repo == "react"){

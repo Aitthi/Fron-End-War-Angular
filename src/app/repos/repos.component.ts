@@ -13,11 +13,18 @@ export class ReposComponent implements OnInit {
   info:any;
 
   constructor(private _git:GitService) {
-    
-   }
+    this.info = {
+        name : "Loading....",
+        description:"",
+        stargazers_count: 0,
+        open_issues: 0,
+        forks: 0,
+        owner: {},        
+      }
+  }
 
   ngOnInit() {
-    this._git.getData(this.Repo).subscribe(data =>{
+    this._git.getRepo(this.Repo).subscribe(data =>{
       this.info = data
     })
     

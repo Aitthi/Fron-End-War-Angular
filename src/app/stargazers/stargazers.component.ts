@@ -17,7 +17,7 @@ export class StargazersComponent implements OnInit {
 
   ngOnInit() {
     let ac = this._router.snapshot.params['ac']
-    this._git.getDataUser(ac).subscribe(data =>{
+    this._git.getStargazers(ac).subscribe(data =>{
       this.info = data
     })  
   }
