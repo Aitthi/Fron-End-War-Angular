@@ -7,8 +7,8 @@ export class GitService {
 
   constructor(private _http:Http) { }
 
-  getRepo(Repo){
-    let url = "https://api.github.com/repos/"+Repo
+  getRepo(Repos){
+    let url = "https://api.github.com/repos/"+Repos
     return this._http.get(url).map(res => res.json())
   }
 
