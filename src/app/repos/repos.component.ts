@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GitService } from '../services/git.service';
+import { Repos } from '../models/Repos.model';
 
 @Component({
   selector: 'app-repos',
@@ -7,27 +8,22 @@ import { GitService } from '../services/git.service';
   styleUrls: ['./repos.component.css']
 })
 export class ReposComponent implements OnInit {
-  
-  @Input() Repo:string;
 
-  info:any;
+  repos: Repos[];
 
-  constructor(private _git:GitService) {
-    this.info = {
-        name : "Loading....",
-        description:"",
-        stargazers_count: 0,
-        open_issues: 0,
-        forks: 0,
-        owner: {},        
-      }
+  @Input() Repo: string;
+
+  constructor(private _git: GitService) {
   }
 
   ngOnInit() {
-    this._git.getRepo(this.Repo).subscribe(data =>{
-      this.info = data
-    })
-    
+    this._git.getRepo(this.Repo).subscribe(
+      repos => this.repos = repos,
+      err => console.log(err)
+    )
+
+
+
   }
 
 }

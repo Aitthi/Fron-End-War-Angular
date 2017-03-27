@@ -27,7 +27,7 @@ const Routers:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule,      
     RouterModule.forRoot(Routers)
   ],
   providers: [GitService],

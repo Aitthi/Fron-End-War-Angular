@@ -4,12 +4,12 @@
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img *ngIf="info.owner.avatar_url"  [src]="info?.owner.avatar_url" alt="Image">
+          <img *ngIf="repos"  [src]="repos.owner.avatar_url" alt="Image">
         </figure>        
       </div>
       <div class="media-content">
-        <p class="title is-3">{{info?.name}} </p>        
-        <p>{{info?.description}}</p>
+        <p class="title is-3">{{repos?.name}} </p>        
+        <p>{{repos?.description}}</p>
 
       </div>
     </div>
@@ -19,8 +19,8 @@
       <font class="card-footer-item">FORKS</font>
     </footer>
     <footer class="card-footer" style="border:0;">
-      <h3 class="card-footer-item title is-3">{{info?.stargazers_count}}</h3>
-      <h3 class="card-footer-item title is-3">{{info?.open_issues}}</h3>
-      <h3 class="card-footer-item title is-3" style="margin-bottom: 24px;">{{info?.forks}}</h3>
+      <h3 class="card-footer-item title is-3">{{repos?.stargazers_count}}</h3>
+      <h3 class="card-footer-item title is-3">{{repos?.open_issues}}</h3>
+      <h3 class="card-footer-item title is-3" style="margin-bottom: 24px;">{{repos?.forks}}</h3>
     </footer>
   </div>
